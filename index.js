@@ -11,4 +11,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/", staticRouter)
 
+app.get("/login", (req, res) => {
+    res.render("login")
+})
+
 app.listen(port, () => console.log(`Server started on ${port}`));
