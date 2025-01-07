@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 <body> 
    <div class="form-container">
       <div class="logo-container">
-        Forgot Password
+        Signup 
       </div>
 
       <form class="form">
         <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required="">
           <label for="email">Email</label>
           <input type="text" id="email" name="email" placeholder="Enter your email" required="">
+          <label for="password">Password</label>
+          <input type="text" id="password" name="password" placeholder="Enter your Password" required="">
         </div>
 
-        <button class="form-submit-btn" type="submit">Send Email</button>
+        <button class="form-submit-btn" type="submit">Signup</button>
       </form>
-
-      <p class="signup-link">
-        Don't have an account?
-        <a href="#" class="signup-link link"> Sign up now</a>
-      </p>
     </div>
 </body>
 </html>
