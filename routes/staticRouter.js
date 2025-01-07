@@ -13,4 +13,8 @@ router.get("/login", (req, res) => {
     return res.render("login");
 })
 
+router.get("/main", (req, res) => {
+  return res.render("main")
+})
+
 module.exports = router;
