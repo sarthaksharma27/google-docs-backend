@@ -6,5 +6,4 @@ const {handleUserSignup, handleUserLogin} = require("../controllers/user")
 router.post("/login", handleUserLogin)
 router.post("/signup", handleUserSignup)
 
-
 module.exports = router;

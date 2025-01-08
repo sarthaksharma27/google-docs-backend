@@ -20,7 +20,7 @@ async function handleUserLogin(req, res) {
 
     const token = setUser(user)
     res.cookie("uid", token)
-    res.redirect("/main")
+    res.redirect("/doc")
 }
 
 module.exports = {
