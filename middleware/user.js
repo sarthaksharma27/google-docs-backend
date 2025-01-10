@@ -1,11 +1,13 @@
 const jwt = require('jsonwebtoken');
 
 function restrictToLoggedinUserOnly(req, res, next) {
-  const token = req.header('Authorization');
+  const token = req.cookies.uid;
+  console.log(token);
+  
   if (!token) return res.status(401).json({ error: 'Access denied' });
 
   try {
-    jwt.verify(token, 'your-secret-key');
+    jwt.verify(token, 'Sarthak$123@$');
     next();
   } catch (error) {
     res.status(401).json({ error: 'Invalid token' });

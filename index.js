@@ -6,6 +6,7 @@ const userRouter = require("./routes/userRoute")
 const docRouter = require("./routes/docRouter")
 const {connectToMongoDB} = require("./connect")
 const restrictToLoggedinUserOnly = require("./middleware/user")
+const cookieParser = require('cookie-parser'); 
 const port = 8080;
 
 app.set('view engine', 'ejs');
@@ -13,6 +14,7 @@ app.set("views", "./views");
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
+app.use(cookieParser())
 
 connectToMongoDB("mongodb://localhost:27017/google-doc")
   .then(() => console.log("MongoDB Started"));
