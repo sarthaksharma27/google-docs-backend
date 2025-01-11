@@ -18,3 +18,12 @@ async function saveContent() {
         return console.log("Content is saved");
     }
 }
+
+async function handleShowData() {
+    const recieveContent = await fetch('/save')
+    const resp = await recieveContent.json()    
+    console.log("This is data i get from backend", resp);
+    const content = recieveContent.length > 0 ? recieveContent[0].content : 'No content found';
+    document.querySelector('.editor').innerHTML = resp;
+}
+
