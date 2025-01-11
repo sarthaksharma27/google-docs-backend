@@ -2,7 +2,6 @@ const jwt = require('jsonwebtoken');
 
 function restrictToLoggedinUserOnly(req, res, next) {
   const token = req.cookies.uid;
-  console.log(token);
   
   if (!token) return res.status(401).json({ error: 'Access denied' });
 
