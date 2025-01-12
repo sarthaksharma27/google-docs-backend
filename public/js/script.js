@@ -4,7 +4,6 @@
 
 async function saveContent() {
     const content = document.querySelector('.editor').innerHTML
-    console.log(content);
 
     const response = await fetch('/save', {
         method: "POST",
@@ -22,7 +21,6 @@ async function saveContent() {
 async function handleShowData() {
     const recieveContent = await fetch('/save')
     const resp = await recieveContent.json()    
-    console.log("This is data i get from backend", resp);
     const content = recieveContent.length > 0 ? recieveContent[0].content : 'No content found';
     document.querySelector('.editor').innerHTML = resp[0].content;
 }

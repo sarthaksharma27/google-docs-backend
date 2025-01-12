@@ -6,7 +6,8 @@ function restrictToLoggedinUserOnly(req, res, next) {
   if (!token) return res.status(401).json({ error: 'Access denied' });
 
   try {
-    jwt.verify(token, 'Sarthak$123@$');
+    const verified = jwt.verify(token, 'Sarthak$123@$');
+    req.user = verified;
     next();
   } catch (error) {
     res.status(401).json({ error: 'Invalid token' });

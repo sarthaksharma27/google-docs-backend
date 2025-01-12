@@ -25,6 +25,6 @@ connectToMongoDB("mongodb://localhost:27017/google-doc")
 app.use("/", staticRouter)
 app.use("/user", userRouter)
 app.use("/doc", restrictToLoggedinUserOnly, docRouter)
-app.use("/save", editorRouter)
+app.use("/save", restrictToLoggedinUserOnly, editorRouter)
 
 app.listen(port, () => console.log(`Server started on ${port}`));
