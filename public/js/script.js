@@ -2,6 +2,35 @@
 //     document.execCommand(command, false, null);
 // }
 
+async function autoContentSave() {
+    const toggle = document.querySelector("#check-apple");
+
+    // Ensure the toggle is checked before proceeding
+    if (toggle.checked) {
+        const content = document.querySelector('.editor').innerHTML;
+
+        try {
+            const response = await fetch('/save', {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' }, 
+                body: JSON.stringify({ content: content })
+            });
+
+            if (!response.ok) {
+                console.error("Content not saved:", await response.text());
+            } else {
+                console.log("Content is saved");
+            }
+        } catch (error) {
+            console.error("Error occurred while saving content:", error);
+        }
+    } 
+}
+
+// Set interval for auto-saving every 5 seconds (5000 ms)
+setInterval(autoContentSave, 5000);
+
+
 async function saveContent() {
     const content = document.querySelector('.editor').innerHTML
 
