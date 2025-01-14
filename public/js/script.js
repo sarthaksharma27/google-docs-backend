@@ -54,3 +54,11 @@ async function handleShowData() {
     document.querySelector('.editor').innerHTML = resp[0].content;
 }
 
+function showDiv() {
+    console.log("Button is working");
+    const result = document.getElementsByClassName('container')[0]
+    result.style.display = "block";
+    console.log(result);
+    
+    
+ }

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
+
 <body>
     <div class="toolbar">
         <button onclick="formatText('bold')">Bold</button>
@@ -16,9 +18,22 @@
         <div class="checkbox-apple">
             <input class="yep" id="check-apple" type="checkbox" value="false">
             <label for="check-apple"></label>
-        </div>        
+        </div>
+        <button onclick="showDiv()">Share</button>
     </div>
+    
+    <div class="container" style="display: none;">
+        <label for="" class="label-access-type">Access Type:</label>
+        <select id="action-select" class="select-action">
+            <option value="view">View</option>
+            <option value="edit">Edit</option>
+        </select>
+        <button class="btn-copy-link" value="">Copy Link</button>
+        <div class="div-close">X</div>
+    </div>
+    
     <div class="editor" contenteditable="true">Write your text here</div>
 </body>
-   <script src="/js/script.js"></script>
+<script src="/js/script.js"></script>
+
 </html>
