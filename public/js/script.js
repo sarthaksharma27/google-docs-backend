@@ -59,6 +59,30 @@ function showDiv() {
     const result = document.getElementsByClassName('container')[0]
     result.style.display = "block";
     console.log(result);
+    console.log(userId);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the button
+    const button = document.getElementById('copyUrlButton');
+  
+    // Add click event listener
+    button.addEventListener('click', () => {
+      // Create the dynamic URL
+      const dynamicUrl = `http://localhost:8080/doc/${userId}`;
+  
+      // Copy the URL to the clipboard
+      navigator.clipboard.writeText(dynamicUrl).then(() => {
+        alert(`Profile link copied to clipboard: ${dynamicUrl}`);
+      }).catch((error) => {
+        console.error('Error copying link:', error);
+        alert('Failed to copy the link. Please try again.');
+      });
+    });
+  });
+
+function divClose() {
+    const result = document.getElementsByClassName('container')[0]
+    result.style.display = "none";
     
-    
- }
+}

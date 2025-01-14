@@ -23,17 +23,20 @@
     </div>
     
     <div class="container" style="display: none;">
-        <label for="" class="label-access-type">Access Type:</label>
+        <!-- <label for="" class="label-access-type">Access Type:</label>
         <select id="action-select" class="select-action">
             <option value="view">View</option>
             <option value="edit">Edit</option>
-        </select>
-        <button class="btn-copy-link" value="">Copy Link</button>
-        <div class="div-close">X</div>
+        </select> -->
+        <button class="btn-copy-link" id="copyUrlButton" value="">Copy Link</button>
+        <div onclick="divClose()" class="div-close">X</div>
     </div>
     
     <div class="editor" contenteditable="true">Write your text here</div>
 </body>
+<script>
+    const userId = "<%= userId %>";
+  </script>
 <script src="/js/script.js"></script>
 
 </html>
