@@ -27,6 +27,6 @@ app.use("/", staticRouter)
 app.use("/user", userRouter)
 app.use("/doc", restrictToLoggedinUserOnly, docRouter)
 app.use("/save", restrictToLoggedinUserOnly, editorRouter)
-app.use("/docs", shareDoc)
+app.use("/doc/view", shareDoc)
 
 app.listen(port, () => console.log(`Server started on ${port}`));
