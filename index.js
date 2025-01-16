@@ -5,6 +5,7 @@ const staticRouter = require("./routes/staticRouter")
 const userRouter = require("./routes/userRoute")
 const docRouter = require("./routes/docRouter")
 const editorRouter = require("./routes/editorRouter")
+const shareDoc = require("./routes/shareDoc")
 const {connectToMongoDB} = require("./connect")
 const restrictToLoggedinUserOnly = require("./middleware/user")
 const cookieParser = require('cookie-parser'); 
@@ -26,5 +27,6 @@ app.use("/", staticRouter)
 app.use("/user", userRouter)
 app.use("/doc", restrictToLoggedinUserOnly, docRouter)
 app.use("/save", restrictToLoggedinUserOnly, editorRouter)
+app.use("/docs", shareDoc)
 
 app.listen(port, () => console.log(`Server started on ${port}`));

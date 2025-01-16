@@ -9,7 +9,6 @@ function restrictToLoggedinUserOnly(req, res, next) {
     const verified = jwt.verify(token, 'Sarthak$123@$');
     req.user = verified;
     console.log(verified);
-        
     next();
   } catch (error) {
     res.status(401).json({ error: 'Invalid token' });

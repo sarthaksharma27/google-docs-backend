@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add click event listener
     button.addEventListener('click', () => {
       // Create the dynamic URL
-      const dynamicUrl = `http://localhost:8080/doc/${userId}`;
+      const dynamicUrl = `http://localhost:8080/docs/${userId}`;
   
       // Copy the URL to the clipboard
       navigator.clipboard.writeText(dynamicUrl).then(() => {
